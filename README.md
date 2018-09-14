@@ -1,1 +1,1 @@
-# fun
+#Place to store interesting projects.
