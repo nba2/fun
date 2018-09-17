@@ -1,13 +1,11 @@
 import turtle
-bob = turtle.Turtle()
-def dotwice(a):
-    a()
-    a()
-def dofour(a):
-    dotwice(a)
-    dotwice(a)
-def move():
-    bob.fd(100)
-    bob.lt(90)
-dofour(move)
-turtle.mainloop()
+def polygon(length, n1):
+    t = turtle.Turtle()
+    print(t)
+    for i in range (n1):
+        t.fd(length)
+        t.lt(360/n1)
+    turtle.mainloop()
+l = float(input("What is the value for length? "))
+n = int(input("How many sides does your polygon have? "))
+polygon(l, n)
