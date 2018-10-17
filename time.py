@@ -10,4 +10,7 @@ if minutes < 10:
     minutes = "0" + minutes
 seconds = seconds%60
 seconds = int(seconds)
+if seconds < 10:
+    seconds = str(seconds)
+    seconds = "0" + seconds
 print("The time is {}:{}:{}, {} days since the epoch.".format(hours,minutes,seconds,days))
