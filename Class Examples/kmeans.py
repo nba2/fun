@@ -15,3 +15,4 @@ if __name__ == "__main__":
         print("Cluster {}:".format(rep))
         for value in cl.cluster(rep):
             print("  {}".format(value))
+    # rep = cl.classify(value)
