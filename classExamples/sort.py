@@ -1,7 +1,7 @@
 
 def swap(l,left,right):
     l[left],l[right] = l[right],l[left]
-    
+
 def bubble(l,key=None):
     """Sort by bubbling up maximum values, *in place*.
 
@@ -123,13 +123,32 @@ def mex(l):
         result += 1
     return result
 
+def _merge(a,b):
+    """Merges two in-order lists, a and b, into increasing (in-order) order."""
+    if not a:
+        return b
+    if not b:
+        return a
+    if a[0] <= b[0]:
+        return [a[0]] + _merge(a[1:],b)
+    else:
+        return [b[0]] + _merge(a,b[1:])
+
+def mergeSort(d):
+    n = len(d)
+    if n >= 2:
+        mid = n//2
+        left = mergeSort(d[:mid])
+        right = mergeSort(d[mid:])
+        return _merge(left,right)
+    else:
+        return d
+        
 def test():
     from doctest import testmod
     testmod()
-    
+
 if __name__ == "__main__":
     test()
     from random import randint
     d = [ randint(0,99) for _ in range(4) ]
-
-    
